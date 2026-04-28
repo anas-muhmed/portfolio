@@ -63,7 +63,7 @@ export default function TechOrbit() {
 
         {/* Desktop: try 3D orbit, fallback inside OrbitalCanvas | Mobile: TechGrid always */}
         <motion.div
-          className="hidden md:block"
+          className="hidden lg:block"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
@@ -72,7 +72,7 @@ export default function TechOrbit() {
         </motion.div>
 
         <motion.div
-          className="md:hidden"
+          className="lg:hidden"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
