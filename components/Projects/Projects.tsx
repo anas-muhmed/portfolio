@@ -39,6 +39,23 @@ const PROJECTS = [
     siteName: "BuildWise",
     screenshot: "/buildwise.png",
   },
+  {
+    title: "AI Spend Audit — Subscription Cost Analyser",
+    tag: "Production · Vercel · Live · AI Powered",
+    description:
+      "A full-stack audit tool that analyses AI tool subscriptions and identifies savings through plan optimisation and redundancy detection. Pure-function audit engine with shareable results via slug — no login required. Built in 7 days shaped by 3 real user interviews.",
+    archFlow: ["Form Input", "POST /api/audit", "runAudit()", "Anthropic API", "Supabase"],
+    techChips: [
+      "Next.js 14", "TypeScript", "Tailwind CSS", "Supabase",
+      "Anthropic API", "Resend", "Vitest", "GitHub Actions", "Vercel",
+    ],
+    liveUrl: "https://credex-ai-audit-one.vercel.app",
+    githubUrl: "https://github.com/anas-muhmed/credex-ai-audit",
+    stat: "4 audit rules · 5 tests passing · 8 AI tools supported · CI/CD on every push",
+    mockupUrl: "credex-ai-audit-one.vercel.app",
+    siteName: "AI Spend Audit",
+    screenshot: "/aispendaudit.png",
+  },
 ];
 
 export default function Projects() {
