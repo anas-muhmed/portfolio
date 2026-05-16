@@ -24,7 +24,7 @@ const SKILLS = [
 const STATS = [
   { value: "2+", label: "Years Building", color: "#00d4ff" },
   { value: "100+", label: "API Endpoints Built", color: "#7c3aed" },
-  { value: "2", label: "Live Products", color: "#00d4ff" },
+  { value: "3", label: "Live Products", color: "#00d4ff" },
 ];
 
 export default function About() {
