@@ -1,72 +1,21 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Nav from "@/components/Nav/Nav";
-import Hero from "@/components/Hero/Hero";
-import About from "@/components/About/About";
-import Projects from "@/components/Projects/Projects";
-import TechOrbit from "@/components/TechOrbit/TechOrbit";
-import Timeline from "@/components/Timeline/Timeline";
-import Contact from "@/components/Contact/Contact";
+const principles = [
+  ["01", "Start with the real boundary", "Understand ownership, data flow, tenant boundaries, and failure modes before changing code."],
+  ["02", "Measure the path", "Profile the actual request or build path, then make the smallest meaningful change."],
+  ["03", "Verify correctness", "Use before/after measurement and output checks so faster does not mean broken."],
+  ["04", "Make delivery repeatable", "Use containers, CI checks, and deployment discipline to reduce manual release risk."],
+];
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <>
-      <AnimatePresence>
-        {loading && (
-          <motion.div
-            key="loader"
-            className="fixed inset-0 z-[100] bg-[#0a0a0a] flex items-center justify-center"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            <motion.div
-              className="flex flex-col items-center gap-5"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {/* Logo mark */}
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center text-black text-xl font-black"
-                style={{ background: "linear-gradient(135deg, #00d4ff, #7c3aed)" }}
-              >
-                A
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#00d4ff] animate-bounce" style={{ animationDelay: "0ms" }} />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#00d4ff] animate-bounce" style={{ animationDelay: "150ms" }} />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#7c3aed] animate-bounce" style={{ animationDelay: "300ms" }} />
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: loading ? 0 : 1 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
-        <Nav />
-        <main>
-          <Hero />
-          <About />
-          <Projects />
-          <TechOrbit />
-          <Timeline />
-          <Contact />
-        </main>
-      </motion.div>
-    </>
-  );
+  return <>
+    <a className="skip-link" href="#main-content">Skip to content</a>
+    <header className="site-header"><a className="wordmark" href="#top" aria-label="Muhammed Anas — home">MA<span>.</span></a><nav aria-label="Primary navigation"><a href="#experience">Experience</a><a href="#work">Work</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#contact">Contact</a></nav></header>
+    <main id="main-content">
+      <section id="top" className="hero section-shell" aria-labelledby="hero-title"><p className="eyebrow">Muhammed Anas / Software Engineer</p><div className="hero-grid"><h1 id="hero-title">Software Engineer <span>— Backend &amp; Platform</span></h1><div className="hero-summary"><p>I build web systems, then take responsibility for how they are deployed, automated, and diagnosed.</p><div className="hero-actions"><a className="button button-primary" href="#work">View engineering work <span aria-hidden="true">↓</span></a><a className="button button-secondary" href="/AnasResume.pdf" download>Download résumé <span aria-hidden="true">↗</span></a></div></div></div><div className="hero-rule" aria-hidden="true"><span>Based in Kerala, India</span><span>Backend systems / delivery / diagnosis</span></div></section>
+      <section id="experience" className="section-shell experience" aria-labelledby="experience-title"><div className="section-kicker"><span>01</span><p>Professional experience</p></div><div className="experience-head"><h2 id="experience-title">Improving the paths that carry critical work.</h2><p>Current role / healthcare software</p></div><article className="experience-record"><div className="record-meta"><p>Jul 2026 — Present</p><p>Camerin Innovate</p><p>Private / internal work</p></div><div className="record-body"><h3>Software Engineer</h3><p className="record-intro">Backend and data performance, module integration, and delivery improvements within a shared multi-tenant healthcare platform.</p><dl className="outcomes"><div><dt>78%</dt><dd>fewer database round trips</dd></div><div><dt>70%</dt><dd>lower clinical-report latency</dd></div><div><dt>89%</dt><dd>smaller initial JavaScript payload</dd></div><div><dt>31%</dt><dd>faster CI workflow</dd></div></dl><p className="record-note">Integrated Mortuary, Drug Indenting, CliniGrowth, and LifeGenX using shared platform patterns. Employer-owned implementation details are intentionally private.</p></div></article></section>
+      <section id="work" className="section-shell work" aria-labelledby="work-title"><div className="section-kicker"><span>02</span><p>Selected engineering work</p></div><h2 id="work-title">Evidence over surface area.</h2><div className="case-list"><article className="case-study"><div className="case-index">Case study / 01</div><div className="case-main"><h3>Healthcare platform integration and data-path performance</h3><p>Applied shared platform patterns across four healthcare modules. Diagnosed a reporting bottleneck, used batched retrieval, verified output parity, then used a revert-and-remeasure loop to confirm the result.</p><p className="case-tools">NestJS · PostgreSQL · TypeORM · RBAC · tenant isolation</p></div><div className="case-result"><strong>78%</strong><span>fewer database round trips</span><strong>70%</strong><span>lower reporting latency</span><small>Employer-owned / internal implementation</small></div></article><article className="case-study"><div className="case-index">Case study / 02</div><div className="case-main"><h3>Delivery performance</h3><p>Introduced route-level code splitting and deferred heavy PDF and chart dependencies. Parallelized tests, frontend build, and dependency/security checks in GitHub Actions.</p><p className="case-tools">Next.js · GitHub Actions · build and dependency checks</p></div><div className="case-result"><strong>89%</strong><span>smaller initial JavaScript payload</span><strong>31%</strong><span>faster CI workflow</span><small>Employer-owned / internal implementation</small></div></article><article className="case-study"><div className="case-index">Case study / 03</div><div className="case-main"><h3>DevConnect</h3><p>A shipped web product with application delivery carried through to containerization, reverse-proxy configuration, cloud deployment, storage access, and automated checks.</p><p className="case-tools">React · Node.js · Express · MongoDB · Docker · Nginx · AWS EC2 · S3 IAM roles · GitHub Actions</p></div><div className="case-result case-link"><a href="https://devconnectsapp.tech" target="_blank" rel="noreferrer">View live product <span aria-hidden="true">↗</span></a><small>Public product</small></div></article></div></section>
+      <section id="approach" className="section-shell approach" aria-labelledby="approach-title"><div className="section-kicker"><span>03</span><p>How I engineer</p></div><h2 id="approach-title">A practical method for change.</h2><ol className="principles">{principles.map(([number, title, detail]) => <li key={number}><span>{number}</span><div><h3>{title}</h3><p>{detail}</p></div></li>)}</ol></section>
+      <section id="about" className="section-shell about" aria-labelledby="about-title"><div className="section-kicker"><span>04</span><p>About</p></div><div className="about-copy"><h2 id="about-title">Systems behind the interface.</h2><p>I’m a software engineer from Kerala with a BCA background. My path moved from web applications toward the systems behind them: APIs, data paths, delivery workflows, deployment, and observability.</p></div></section>
+      <section id="contact" className="section-shell contact" aria-labelledby="contact-title"><div className="section-kicker"><span>05</span><p>Contact</p></div><h2 id="contact-title">Let’s discuss the work that needs to hold up.</h2><div className="contact-links"><a href="mailto:anassafia.dev@gmail.com">anassafia.dev@gmail.com <span aria-hidden="true">↗</span></a><a href="https://github.com/anas-muhmed" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://linkedin.com/in/muhammed-anas-151926300/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></section>
+    </main><footer><span>© {new Date().getFullYear()} Muhammed Anas</span><a href="#top">Back to top ↑</a></footer>
+  </>;
 }

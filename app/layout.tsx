@@ -1,64 +1,10 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
+const geist = localFont({ src: "./fonts/GeistVF.woff", variable: "--font-geist", display: "swap" });
+const geistMono = localFont({ src: "./fonts/GeistMonoVF.woff", variable: "--font-geist-mono", display: "swap" });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  display: "swap",
-});
-
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-};
-
-export const metadata: Metadata = {
-  title: "Muhammed Anas — Full Stack Developer",
-  description:
-    "I build backend systems that run in production, not just on localhost. From modular Node.js APIs to Docker containers, automated CI/CD pipelines, and AWS deployments — I care about what happens after the code is written.",
-  keywords: [
-    "Full Stack Developer",
-    "Backend Engineer",
-    "Node.js",
-    "React",
-    "Docker",
-    "AWS",
-    "DevOps",
-    "Muhammed Anas",
-  ],
-  authors: [{ name: "Muhammed Anas" }],
-  openGraph: {
-    title: "Muhammed Anas — Full Stack Developer",
-    description:
-      "Full Stack Developer building production-grade backend systems with Node.js, Docker, AWS, and CI/CD pipelines.",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Muhammed Anas — Full Stack Developer",
-    description:
-      "Full Stack Developer building production-grade backend systems with Node.js, Docker, AWS, and CI/CD pipelines.",
-  },
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} bg-[#0a0a0a] text-[#ededed] antialiased overflow-x-hidden font-sans`}>
-        {children}
-      </body>
-    </html>
-  );
-}
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#17191d" };
+export const metadata: Metadata = { title: "Muhammed Anas — Software Engineer, Backend & Platform", description: "Muhammed Anas is a software engineer focused on backend systems and the deployment, automation, and diagnosis that keep them running.", authors: [{ name: "Muhammed Anas" }], openGraph: { title: "Muhammed Anas — Software Engineer, Backend & Platform", description: "Software engineer building web systems and taking responsibility for their deployment, automation, and diagnosis.", type: "website", url: "https://www.anasdev.software/", siteName: "Muhammed Anas" }, twitter: { card: "summary", title: "Muhammed Anas — Software Engineer, Backend & Platform", description: "Software engineer building web systems and taking responsibility for their deployment, automation, and diagnosis." } };
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en" className={`${geist.variable} ${geistMono.variable}`}><body>{children}</body></html>; }

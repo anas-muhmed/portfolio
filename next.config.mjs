@@ -1,6 +1,3 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  transpilePackages: ["framer-motion"],
-};
-
+const nextConfig = {};
 export default nextConfig;
