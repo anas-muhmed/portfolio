@@ -49,6 +49,7 @@ export default function ZoeConnectCaseStudy() {
             <div><dt>Still due</dt><dd>40 units</dd></div>
           </dl>
           <p>Staff can record the 60 units that arrive and keep the remaining 40 visible on the same request.</p>
+          <Link className="text-link case-demo-link" href="/#demo">Try this order in the interactive demo ↗</Link>
         </div>
         <ol className="case-flow" aria-label="Drug Indenting workflow">
           <li><strong>Request</strong><span>Submit medications and quantities.</span></li>

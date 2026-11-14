@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PortfolioFilm from "./portfolio-film";
+import PharmacyDemo from "./pharmacy-demo";
 
 const gh = 'https://github.com/anas-muhmed';
 const projects = [
@@ -28,29 +29,7 @@ export default function Home(){return <>
           <a className="text-link" href="#work">See my work <span aria-hidden="true">↓</span></a>
         </div>
       </div>
-      <Link className="workflow-preview" href="/work/zoeconnect">
-        <div className="workflow-top"><span>FEATURED CASE STUDY</span><span aria-hidden="true">↗</span></div>
-        <div className="workflow-stage" aria-hidden="true">
-          <div className="workflow-grid" />
-          <div className="workflow-deck workflow-deck-back" />
-          <div className="workflow-deck workflow-deck-middle" />
-          <div className="workflow-deck workflow-deck-front">
-            <div className="workflow-sheet">
-              <span className="workflow-kicker">ILLUSTRATIVE PHARMACY ORDER</span>
-              <span className="workflow-order">Delivery in progress</span>
-              <div className="workflow-meter"><span /><span /></div>
-              <div className="workflow-counts">
-                <span><strong>60</strong> received</span>
-                <span><strong>40</strong> still due</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="workflow-bottom">
-          <div><strong>ZoeConnect</strong><span>Hospital pharmacy workflows</span></div>
-          <span className="workflow-link">Read case study <span aria-hidden="true">↗</span></span>
-        </div>
-      </Link>
+      <PharmacyDemo />
     </div>
   </div>
 </section>
