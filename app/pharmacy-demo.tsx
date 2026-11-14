@@ -12,7 +12,7 @@ export default function PharmacyDemo() {
   const received = complete ? ordered : firstDelivery;
 
   return (
-    <section id="demo" className="workflow-preview" aria-labelledby="demo-title">
+    <article id="demo" className="workflow-preview" aria-labelledby="demo-title">
       <div className="workflow-top">
         <div>
           <h2 id="demo-title">Try the pharmacy workflow</h2>
@@ -43,6 +43,6 @@ export default function PharmacyDemo() {
         </button>
         <Link className="workflow-link" href="/work/zoeconnect">ZoeConnect case study <span aria-hidden="true">↗</span></Link>
       </div>
-    </section>
+    </article>
   );
 }
