@@ -75,3 +75,115 @@
 .case-example dt { color: var(--green); font-size: 13px; }
 .case-example dd { margin: 4px 0 0; font-size: clamp(16px, 3vw, 36px); font-weight: 600; letter-spacing: -.045em; line-height: 1.15; }
 .case-example > p:last-child { font-size: 14px; }
+
+.portfolio-film {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(28px, 6vw, 88px);
+  margin-bottom: 28px;
+  padding: clamp(30px, 5.5vw, 76px);
+  border-radius: 8px;
+  background: #142f23;
+  color: var(--paper);
+}
+.film-copy .label { color: #bed6bd; }
+.film-copy h3 { margin: 18px 0 22px; font-size: clamp(44px, 6vw, 88px); line-height: .98; }
+.film-copy h3 em { color: var(--lime); }
+.film-description { max-width: 37ch; color: #d7e2d6; font-size: 15px; line-height: 1.7; }
+.film-contact { display: inline-block; margin-top: 24px; color: var(--lime); }
+.film-view { min-width: 0; text-align: center; }
+.film-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: auto;
+  border-radius: 6px;
+  cursor: pointer;
+  color: inherit;
+}
+.film-trigger:focus-visible, .film-player video:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 5px;
+}
+.film-stage {
+  display: grid;
+  place-items: center;
+  position: relative;
+  isolation: isolate;
+  perspective: 860px;
+  overflow: hidden;
+  aspect-ratio: 13 / 9;
+  border-radius: 6px;
+  background: radial-gradient(ellipse at center, #365540, #1b392b 73%);
+}
+.film-frame {
+  grid-area: 1 / 1;
+  width: 33%;
+  aspect-ratio: 9 / 16;
+  background-color: #223d35;
+  background-size: cover;
+  border: 1px solid rgb(236 246 222 / .28);
+  border-radius: 4px;
+  box-shadow: 0 10px 24px rgb(0 0 0 / .35);
+}
+.film-frame-left {
+  background-image: url("/films/hospital-left.webp");
+  transform: translateX(-78%) translateY(5%) rotateY(23deg) rotate(-9deg);
+}
+.film-frame-right {
+  background-image: url("/films/renovation-right.webp");
+  transform: translateX(78%) translateY(5%) rotateY(-23deg) rotate(9deg);
+}
+.film-frame-center {
+  background-image: url("/films/checkout-mid.webp");
+  transform: translateZ(45px) translateY(-3%);
+}
+.film-play {
+  grid-area: 1 / 1;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  background: var(--lime);
+  box-shadow: 0 2px 18px #1119;
+  transition: transform .18s ease, background-color .18s ease;
+}
+.film-play span {
+  width: 0;
+  height: 0;
+  margin-left: 3px;
+  border-block: 7px solid transparent;
+  border-left: 11px solid var(--ink);
+}
+.film-trigger:hover .film-play { transform: scale(1.06); background: #ebf9b6; }
+.film-button-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 12px;
+  padding: 12px 0 0;
+  font-size: 15px;
+  font-weight: 550;
+}
+.film-button-label span, .film-file { color: #d0e0ce; font-size: 12px; font-weight: 400; }
+.film-player {
+  display: grid;
+  place-items: center;
+  min-height: 250px;
+  aspect-ratio: 13 / 9;
+  border-radius: 6px;
+  background: #10291e;
+}
+.film-player video { display: block; max-width: 100%; width: auto; height: auto; max-height: min(410px, 65svh); }
+.film-file { display: inline-block; margin-top: 10px; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 680px) {
+  .portfolio-film { grid-template-columns: minmax(0, 1fr); padding: clamp(18px, 6vw, 35px); }
+  .film-copy h3 { margin: 12px 0 16px; font-size: clamp(36px, 10vw, 58px); }
+  .film-description { font-size: 14px; }
+  .film-contact { margin-top: 16px; }
+  .film-play { width: 44px; height: 44px; }
+}

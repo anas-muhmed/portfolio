@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PortfolioFilm from "./portfolio-film";
 
 const gh = 'https://github.com/anas-muhmed';
 const projects = [
@@ -24,7 +25,7 @@ export default function Home(){return <>
   </div>
   <div className="board-bottom"><span>Camerin Innovate</span><span>Read the case study ↗</span></div>
 </Link></div><div className="trust"><span>Hospital deployments include</span><strong>MOSC, Kolencherry</strong><strong>Al Mass, Malappuram</strong><span className="employment">Delivered through Camerin Innovate</span></div></section>
-<section id="work" className="shell"><div className="section-head"><div><p className="label">01 / SELECTED WORK</p><h2>Selected projects</h2></div><p>Hospital software built at Camerin Innovate, plus public projects that show how I build and deploy.</p></div><article className="flagship-feature" id="devconnect">
+<section id="work" className="shell"><div className="section-head"><div><p className="label">01 / SELECTED WORK</p><h2>Selected projects</h2></div><p>Hospital software built at Camerin Innovate, plus public projects that show how I build and deploy.</p></div><PortfolioFilm /><article className="flagship-feature" id="devconnect">
   <div>
     <p className="label">DEPLOYMENT / DEVCONNECT</p>
     <h3>From a code push to AWS</h3>

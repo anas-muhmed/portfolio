@@ -67,6 +67,7 @@ export default function ZoeConnectCaseStudy() {
           <div className="case-actions">
             <Link className="button" href="/#contact">Discuss a similar project ↗</Link>
             <a className="text-link" href="https://zoeconnect.in/" target="_blank" rel="noreferrer">Visit the public product site ↗</a>
+            <Link className="text-link" href="/#film">Watch the portfolio film ↗</Link>
           </div>
         </div>
       </main>
