@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { narration } from "./story";
 
 export const metadata: Metadata = {
   title: "ZoeConnect case study | Muhammed Anas",
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 const contributions = [
   ["Request, comparison and approval", "Built screens and backend logic to submit medication requests, compare options and route requests through review and approval."],
   ["Order and receipt tracking", "Added per-item ordering and inventory receipt so teams can record partial deliveries and see what is outstanding."],
-  ["Database and integration work", "Implemented changes across the interface, API and database and helped bring the workflow into the wider platform."],
+  ["Database and integration work", "Integrated Drug Indenting into ZoeConnect and added database support for item-level ordering and inventory receipts."],
 ];
 
 export default function ZoeConnectCaseStudy() {
@@ -34,33 +33,20 @@ export default function ZoeConnectCaseStudy() {
         <div className="case-intro">
           <p className="label">CASE STUDY / CAMERIN INNOVATE</p>
           <h1>ZoeConnect</h1>
-          <p className="case-lead">A hospital operations platform. One pharmacy workflow, from request to stock receipt.</p>
+          <p className="case-lead">A modular healthcare platform, co-built by two engineers at Camerin Innovate.</p>
           <p>I co-built ZoeConnect with Vignesh at Camerin Innovate. The platform works alongside existing hospital systems. My work included Drug Indenting, which gives pharmacy teams a way to follow each medication request through approval, order and inventory receipt.</p>
           <dl className="case-facts">
             <div><dt>Platform adoption</dt><dd>10+ hospital clients</dd></div>
             <div><dt>Engineering team</dt><dd>Muhammed Anas & Vignesh</dd></div>
-            <div><dt>My contribution</dt><dd>Full-stack workflow engineering</dd></div>
+            <div><dt>My contribution</dt><dd>Drug Indenting · UI, APIs & database</dd></div>
           </dl>
         </div>
-        <figure className="case-film">
-          <video
-            aria-label="ZoeConnect illustrated case study"
-            controls
-            playsInline
-            preload="none"
-            poster="/work/zoeconnect/walkthrough-poster.webp"
-            width={1280}
-            height={720}
-          >
-            <source src="/work/zoeconnect/walkthrough.mp4" type="video/mp4" />
-            <a href="/work/zoeconnect/walkthrough.mp4">Download the ZoeConnect walkthrough</a>
-          </video>
-          <figcaption>54 seconds · Illustrated workflow with example quantities</figcaption>
-        </figure>
-        <details className="film-transcript">
-          <summary>Read the walkthrough</summary>
-          {narration.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-        </details>
+        <ol className="case-flow" aria-label="Drug Indenting workflow">
+          <li><strong>Request</strong><span>Submit medications and quantities.</span></li>
+          <li><strong>Compare & approve</strong><span>Review supplier options and approve the request.</span></li>
+          <li><strong>Order</strong><span>Track which items have been ordered.</span></li>
+          <li><strong>Receive</strong><span>Record deliveries and see what’s outstanding.</span></li>
+        </ol>
         <div className="case-body">
           <p className="label">DRUG INDENTING</p>
           <h2>From a request to the stockroom</h2>

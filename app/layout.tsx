@@ -6,5 +6,20 @@ const geist = localFont({ src: "./fonts/GeistVF.woff", variable: "--font-geist",
 const geistMono = localFont({ src: "./fonts/GeistMonoVF.woff", variable: "--font-geist-mono", display: "swap" });
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#142f23" };
-export const metadata: Metadata = { title: "Muhammed Anas — Software Engineer, Backend & Platform", description: "Software engineer building hospital applications, backend APIs and deployment workflows. Available for scoped freelance web, backend and cloud projects.", authors: [{ name: "Muhammed Anas" }], openGraph: { title: "Muhammed Anas — Software Engineer, Backend & Platform", description: "Hospital application experience, backend engineering and deployment automation. Discuss a scoped freelance project with Muhammed Anas.", type: "website", url: "https://www.anasdev.software/", siteName: "Muhammed Anas" }, twitter: { card: "summary", title: "Muhammed Anas — Software Engineer, Backend & Platform", description: "Hospital application experience, backend engineering and deployment automation. Discuss a scoped freelance project with Muhammed Anas." } };
+const title = "Muhammed Anas — Software Engineer | Backend, Cloud & CI/CD";
+const description = "Software engineer at Camerin Innovate and co-builder of ZoeConnect, used by 10+ hospital clients. Available for backend, integration and deployment projects.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  authors: [{ name: "Muhammed Anas" }],
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    url: "https://www.anasdev.software/",
+    siteName: "Muhammed Anas",
+  },
+  twitter: { card: "summary", title, description },
+};
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en" className={`${geist.variable} ${geistMono.variable}`}><body>{children}</body></html>; }

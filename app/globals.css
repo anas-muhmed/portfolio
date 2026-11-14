@@ -29,6 +29,7 @@
 .flagship-feature h3 { font-size: clamp(33px, 4vw, 49px); margin: 12px 0; }
 .flagship-feature div > p:last-child { max-width: 570px; font-size: 15px; }
 .flagship-feature .button { flex-shrink: 0; }
+#work .supporting { grid-template-columns: minmax(0, 640px); }
 .case-study { max-width: 1030px; padding: 70px 0 100px; }
 .case-intro h1 { margin-bottom: 10px; }
 .case-intro > p:not(.label) { max-width: 740px; margin-top: 16px; }
@@ -37,12 +38,23 @@
 .case-facts > div { padding-top: 12px; border-top: 1px solid var(--line); }
 .case-facts dt { color: var(--muted); font-size: 12px; }
 .case-facts dd { font-weight: 550; margin: 4px 0 0; }
-.case-film { margin: 0; }
-.case-film video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; background: var(--dark); }
-.case-film figcaption { color: var(--muted); font-size: 12px; margin-top: 9px; }
-.film-transcript { margin-top: 14px; font-size: 13px; }
-.film-transcript summary { cursor: pointer; width: fit-content; }
-.film-transcript p { max-width: 690px; margin-top: 10px; }
+.case-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: clamp(20px, 4vw, 36px);
+  background: var(--dark);
+  border-radius: 8px;
+}
+.case-flow li { border-top: 1px solid #638373; padding-top: 12px; }
+.case-flow strong, .case-flow span { display: block; }
+.case-flow strong { color: var(--lime); font-size: 16px; }
+.case-flow span { color: #d8e5d7; font-size: 13px; margin-top: 5px; }
+@media (max-width: 680px) {
+  .case-flow { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+}
 .case-body { margin-top: 65px; }
 .case-body h2 { font-size: clamp(33px, 4.5vw, 50px); margin: 12px 0 15px; }
 .case-body > p { max-width: 720px; }
