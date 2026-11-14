@@ -3,6 +3,11 @@
 import { useState } from "react";
 
 const film = "/films/show-me-the-problem-preview.mp4";
+const coverFrames = [
+  ["left", "hospital-left.webp"],
+  ["right", "renovation-right.webp"],
+  ["center", "checkout-mid.webp"],
+];
 
 export default function PortfolioFilm() {
   const [playing, setPlaying] = useState(false);
@@ -40,9 +45,11 @@ export default function PortfolioFilm() {
         ) : (
           <button type="button" className="film-trigger" onClick={() => setPlaying(true)}>
             <span className="film-stage" aria-hidden="true">
-              <span className="film-frame film-frame-left" />
-              <span className="film-frame film-frame-right" />
-              <span className="film-frame film-frame-center" />
+              {coverFrames.map(([position, filename]) => (
+                // The final-size WebP assets are already compressed.
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={position} className={`film-frame film-frame-${position}`} src={`/films/${filename}`} alt="" width={288} height={512} loading="lazy" decoding="async" />
+              ))}
               <span className="film-play"><span /></span>
             </span>
             <span className="film-button-label">Play the film <span>0:21 · Visual excerpt</span></span>

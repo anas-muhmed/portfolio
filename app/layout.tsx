@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geist = localFont({ src: "./fonts/GeistVF.woff", variable: "--font-geist", display: "swap" });
-const geistMono = localFont({ src: "./fonts/GeistMonoVF.woff", variable: "--font-geist-mono", display: "swap" });
+const geist = localFont({ src: "./fonts/GeistVF.woff2", variable: "--font-geist", display: "swap" });
+const geistMono = localFont({ src: "./fonts/GeistMonoVF.woff2", preload: false, variable: "--font-geist-mono", display: "swap" });
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#142f23" };
 const title = "Muhammed Anas — Software Engineer | Backend, Cloud & CI/CD";

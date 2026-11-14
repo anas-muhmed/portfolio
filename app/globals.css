@@ -128,15 +128,12 @@
   box-shadow: 0 10px 24px rgb(0 0 0 / .35);
 }
 .film-frame-left {
-  background-image: url("/films/hospital-left.webp");
   transform: translateX(-78%) translateY(5%) rotateY(23deg) rotate(-9deg);
 }
 .film-frame-right {
-  background-image: url("/films/renovation-right.webp");
   transform: translateX(78%) translateY(5%) rotateY(-23deg) rotate(9deg);
 }
 .film-frame-center {
-  background-image: url("/films/checkout-mid.webp");
   transform: translateZ(45px) translateY(-3%);
 }
 .film-play {
@@ -186,4 +183,120 @@
   .film-description { font-size: 14px; }
   .film-contact { margin-top: 16px; }
   .film-play { width: 44px; height: 44px; }
+}
+
+.hero-new {
+  padding-top: 0;
+  background: radial-gradient(ellipse at 88% 16%, #274839 0%, #122c21 44%, #10251c 82%);
+  color: #f5f7ea;
+}
+.hero-new .eyebrow { padding: 22px 0; border-bottom: 1px solid #637e6763; color: #d6e5d3; }
+.hero-new .eyebrow > span:last-child { color: #c2d4c2; }
+.hero-new .dot { background: var(--lime); }
+.hero-new .hero-grid { grid-template-columns: 1.04fr minmax(0, 1fr); gap: clamp(28px, 5vw, 76px); padding: clamp(58px, 7vw, 100px) 0; }
+.hero-intro .label { color: #c2d4c2; }
+.hero-intro h1 { font-size: clamp(46px, 6.05vw, 88px); margin: 18px 0 24px; }
+.hero-intro h1 em { color: var(--lime); }
+.hero-new .hero-copy { color: #d4e2d1; max-width: 48ch; }
+.hero-new .text-link { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; }
+.hero-primary { background: var(--lime); color: #17291e; }
+.hero-primary:hover { background: #eff9c8; }
+.hero-new a:focus-visible { outline-color: var(--lime); }
+
+.workflow-preview {
+  display: block;
+  min-width: 0;
+  background: #182f25;
+  border: 1px solid #73917a78;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.workflow-top, .workflow-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: clamp(12px, 2.1vw, 24px);
+}
+.workflow-top, .workflow-link {
+  color: #d1e4cb;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  letter-spacing: .025em;
+}
+.workflow-top > span:last-child { font-size: 16px; color: var(--lime); }
+.workflow-bottom { border-top: 1px solid #73917a55; }
+.workflow-bottom strong { display: block; font-size: clamp(22px, 3vw, 34px); line-height: 1.15; letter-spacing: -.045em; font-weight: 550; }
+.workflow-bottom div > span { display: block; font-size: 12px; margin-top: 4px; color: #c2d4c2; }
+.workflow-link { text-align: right; text-decoration: underline; text-underline-offset: 4px; }
+.workflow-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 235px;
+  aspect-ratio: 1.62;
+  isolation: isolate;
+  perspective: 850px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 45% 55%, #44674d, #1c392f 74%);
+}
+.workflow-grid {
+  position: absolute;
+  inset: -30% -20%;
+  background-image: linear-gradient(#cee4c724 1px, transparent 1px), linear-gradient(90deg, #cee4c724 1px, transparent 1px);
+  background-size: 26px 26px;
+  transform: rotateX(49deg) rotateZ(-25deg);
+  mask-image: radial-gradient(ellipse, #000 36%, transparent 70%);
+}
+.workflow-deck {
+  grid-area: 1 / 1;
+  width: 72%;
+  aspect-ratio: 1.78;
+  border: 1px solid #c7dfbd8c;
+  border-radius: 10px;
+  transform: translateY(var(--lift)) rotateX(21deg) rotateY(-15deg) rotateZ(-9deg);
+}
+.workflow-deck-back { --lift: 19%; background: #335a48; box-shadow: 0 14px 22px #0a201c9c; }
+.workflow-deck-middle { --lift: 6%; background: #709272; }
+.workflow-deck-front { --lift: -8%; background: #f2f4e8; color: var(--ink); box-shadow: 0 8px 24px #0c201e62; }
+.workflow-sheet { padding: 10% 9%; line-height: 1.12; }
+.workflow-sheet > span { display: block; }
+.workflow-kicker { font-family: var(--font-geist-mono), monospace; font-size: clamp(7px, 1.05vw, 11px); color: #425b4a; }
+.workflow-order { margin-top: 8px; font-size: clamp(15px, 2.2vw, 31px); letter-spacing: -.052em; font-weight: 600; }
+.workflow-meter { display: grid; grid-template-columns: 3fr 2fr; gap: 4px; height: 7px; margin: 12px 0 9px; }
+.workflow-meter span { background: #387457; border-radius: 2px; }
+.workflow-meter span + span { background: #c0a56e; }
+.workflow-counts { display: flex; justify-content: space-between; gap: 8px; color: #354c3c; font-size: clamp(10px, 1.2vw, 14px); }
+.workflow-counts strong { font-weight: 700; }
+@media (prefers-reduced-motion: no-preference) {
+  .workflow-deck-back { animation: assemble-deck 620ms cubic-bezier(.2,.7,.2,1) both; }
+  .workflow-deck-middle { animation: assemble-deck 460ms cubic-bezier(.2,.7,.2,1) both; }
+}
+@keyframes assemble-deck {
+  from { transform: translateY(-8%) rotateX(21deg) rotateY(-15deg) rotateZ(-9deg); }
+  to { transform: translateY(var(--lift)) rotateX(21deg) rotateY(-15deg) rotateZ(-9deg); }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .workflow-deck { transition: transform 320ms cubic-bezier(.2,.7,.2,1); }
+  .workflow-preview:is(:hover, :focus-visible) .workflow-deck-front { transform: translateY(-16%) rotateX(11deg) rotateY(-9deg) rotateZ(-5deg); }
+}
+.proof-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 28px; }
+.proof-card { padding: clamp(22px, 3.3vw, 46px); background: #e9ede0; border: 1px solid #d6dfd1; border-radius: 8px; }
+.proof-card h3 { font-size: clamp(30px, 3.3vw, 48px); margin: 14px 0; }
+.proof-card > p:not(.label) { max-width: 45ch; }
+.proof-card .text-link { display: inline-flex; min-height: 44px; align-items: center; margin-top: 12px; text-decoration: underline; text-underline-offset: 4px; }
+.film-frame { display: block; height: auto; object-fit: cover; }
+@media (max-width: 800px) {
+  .hero-new .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .workflow-preview { width: min(100%, 530px); }
+  .workflow-order { font-size: clamp(19px, 4vw, 30px); }
+  .workflow-kicker { font-size: clamp(8px, 1.8vw, 11px); }
+  .workflow-counts { font-size: clamp(11px, 2vw, 14px); }
+}
+@media (max-width: 520px) {
+  .hero-new .hero-grid { padding: 44px 0; }
+  .hero-intro h1 { font-size: clamp(37px, 10.3vw, 62px); }
+  .workflow-stage { min-height: 190px; }
+  .workflow-top, .workflow-link { font-size: 10px; }
+  .proof-grid { grid-template-columns: minmax(0, 1fr); }
 }
