@@ -69,3 +69,9 @@
   .case-facts, .case-contributions { grid-template-columns: 1fr; }
   .case-body { margin-top: 50px; }
 }
+
+.case-example { margin: 28px 0 18px; padding: clamp(18px, 4vw, 32px); border: 1px solid var(--line); border-radius: 8px; background: #e6eddc; }
+.case-example dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
+.case-example dt { color: var(--green); font-size: 13px; }
+.case-example dd { margin: 4px 0 0; font-size: clamp(16px, 3vw, 36px); font-weight: 600; letter-spacing: -.045em; line-height: 1.15; }
+.case-example > p:last-child { font-size: 14px; }

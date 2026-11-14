@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const contributions = [
   ["Request, comparison and approval", "Built screens and backend logic to submit medication requests, compare options and route requests through review and approval."],
   ["Order and receipt tracking", "Added per-item ordering and inventory receipt so teams can record partial deliveries and see what is outstanding."],
-  ["Database and integration work", "Integrated Drug Indenting into ZoeConnect and added database support for item-level ordering and inventory receipts."],
+  ["Database and integration work", "Integrated Drug Indenting into ZoeConnect and added database records for each medication’s order and receipt state."],
 ];
 
 export default function ZoeConnectCaseStudy() {
@@ -33,13 +33,22 @@ export default function ZoeConnectCaseStudy() {
         <div className="case-intro">
           <p className="label">CASE STUDY / CAMERIN INNOVATE</p>
           <h1>ZoeConnect</h1>
-          <p className="case-lead">A modular healthcare platform, co-built by two engineers at Camerin Innovate.</p>
-          <p>I co-built ZoeConnect with Vignesh at Camerin Innovate. The platform works alongside existing hospital systems. My work included Drug Indenting, which gives pharmacy teams a way to follow each medication request through approval, order and inventory receipt.</p>
+          <p className="case-lead">When a pharmacy order arrives in parts, staff can see exactly what’s still due.</p>
+          <p>I co-built ZoeConnect with Vignesh at Camerin Innovate. I built Drug Indenting across the UI, APIs, and database.</p>
           <dl className="case-facts">
             <div><dt>Platform adoption</dt><dd>10+ hospital clients</dd></div>
             <div><dt>Engineering team</dt><dd>Muhammed Anas & Vignesh</dd></div>
             <div><dt>My contribution</dt><dd>Drug Indenting · UI, APIs & database</dd></div>
           </dl>
+        </div>
+        <div className="case-example">
+          <p className="label">EXAMPLE PHARMACY ORDER</p>
+          <dl aria-label="Illustrative quantities">
+            <div><dt>Ordered</dt><dd>100 units</dd></div>
+            <div><dt>Received</dt><dd>60 units</dd></div>
+            <div><dt>Still due</dt><dd>40 units</dd></div>
+          </dl>
+          <p>Staff can record the 60 units that arrive and keep the remaining 40 visible on the same request.</p>
         </div>
         <ol className="case-flow" aria-label="Drug Indenting workflow">
           <li><strong>Request</strong><span>Submit medications and quantities.</span></li>
@@ -49,8 +58,7 @@ export default function ZoeConnectCaseStudy() {
         </ol>
         <div className="case-body">
           <p className="label">DRUG INDENTING</p>
-          <h2>From a request to the stockroom</h2>
-          <p>A request can contain multiple medications, and items may be ordered or delivered at different times. I built the workflow so teams can see each item’s status and keep pending quantities visible after a partial delivery.</p>
+          <h2>What I built</h2>
           <div className="case-contributions">
             {contributions.map(([title, description]) => (
               <article key={title}><h3>{title}</h3><p>{description}</p></article>
