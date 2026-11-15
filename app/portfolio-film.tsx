@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const film = "/films/show-me-the-problem-preview.mp4";
+const film = "/films/show-me-the-problem-r7.mp4";
 const coverFrames = [
   ["left", "hospital-left.webp"],
   ["right", "renovation-right.webp"],
@@ -28,7 +28,7 @@ export default function PortfolioFilm() {
           <div className="film-player">
             <video
               ref={(element) => { element?.focus(); }}
-              aria-label="Show me the problem, a 21-second visual excerpt"
+              aria-label="Show me the problem, narrated film"
               controls
               autoPlay
               playsInline
@@ -52,7 +52,7 @@ export default function PortfolioFilm() {
               ))}
               <span className="film-play"><span /></span>
             </span>
-            <span className="film-button-label">Play the film <span>0:21 · Visual excerpt</span></span>
+            <span className="film-button-label">Play the film <span>1:48 · Narrated</span></span>
           </button>
         )}
         {playing && <a className="film-file" href={film}>Open video file ↗</a>}
